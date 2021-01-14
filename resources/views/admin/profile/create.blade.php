@@ -29,8 +29,10 @@
                 <div class="form-group row">
                     <label class="col-md-2" for="gender">性別</label>
                     <div class="col-md-10">
-                        <input type="radio" class="form-control" name="gender" value="man" checked="checked">男性
-                        <input type="radio" class="form-control" name="gender" value="woman">女性
+                        <input id="gender-m" type="radio" name="gender" value="man">
+                        <label for="gender-m">男性</label><br>
+                        <input id="gender-w" type="radio" name="gender" value="woman">
+                        <label for="gender-w">女性</label>
                     </div>
                 </div>
 
@@ -44,7 +46,7 @@
                 <div class="form-group row">
                     <label class="col-md-2" for="introduction">自己紹介</label>
                     <div class="col-md-10">
-                        <textarea class="form-control" name="inroduction" rows="10">{{ old('inroduction') }}</textarea>
+                        <textarea class="form-control" name="introduction" rows="10">{{ old('introduction') }}</textarea>
                     </div>
                 </div>
 
