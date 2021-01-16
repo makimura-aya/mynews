@@ -42,4 +42,18 @@ class ProfileController extends Controller
     {
         return redirect('admin/profile/edit');
     }
+
+    public function index(Request $request)
+    {
+        $cond_name = $request->cond_name;
+        if ($cond_name != '') {
+            // 検索されたら検索結果を取得
+            $posts = Profile::where('name',$cond_name)->get();
+        } else {
+            // それ以外は全てのプロフィールを取得
+            $posts = Profile::all();
+        }
+        return view('admin.profile.index',['posts' => $posts,'cond_name' => $cond_name]);
+
+    }
 }
